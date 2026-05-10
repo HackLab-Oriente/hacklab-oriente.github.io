@@ -114,11 +114,11 @@ header { border-bottom: 1px solid var(--border); }
   margin: 1.5rem 0 2rem;
   padding: 1rem 1.25rem;
   background: var(--entry);
-  border-left: 3px solid #3fb950;
+  border-left: 3px solid #1a7f37;
   border-radius: 0 6px 6px 0;
 }
 
-:root .event-info { border-left-color: #1a7f37; }
+.dark .event-info { border-left-color: #3fb950; }
 
 /*
  * Two-column grid: labels on the left, values on the right.

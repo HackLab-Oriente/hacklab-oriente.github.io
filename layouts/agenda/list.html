@@ -11,7 +11,8 @@
 
 {{- /* Sort ascending by date, then drop events whose eventDate has passed */ -}}
 {{- $pages := .RegularPages.ByDate }}
-{{- $pages = where $pages "Date" "ge" now }}
+{{- $today := now.Format "2006-01-02" | time }}
+{{- $pages = where $pages "Date" "ge" $today }}
 {{- $paginator := .Paginate $pages }}
 
 {{- range $paginator.Pages }}
