@@ -1,0 +1,104 @@
+/*
+ * Hacklab Oriente – custom theme overrides for PaperMod
+ *
+ * PaperMod provides a clean base but uses generic blues and a sans-serif
+ * font. This file overrides its CSS custom properties and adds lab-specific
+ * styling to give the site a terminal/hacker aesthetic while keeping it
+ * readable. All changes are additive – no PaperMod files are modified.
+ *
+ * PaperMod applies the `.dark` class to <body> when dark mode is active.
+ * Variables declared under `.dark` override the defaults in `:root`.
+ */
+
+/* ── Color palette ──────────────────────────────────────────────────────── */
+
+/* Light mode: off-white background, dark text, forest-green accents */
+:root {
+  --theme: #f6f8fa;
+  --entry: #ffffff;
+  --primary: #1f2328;
+  --secondary: #57606a;
+  --tertiary: #eaeef2;
+  --content: #24292f;
+  --code-bg: #eef0f3;
+  --border: #d0d7de;
+}
+
+/* Dark mode: GitHub-dark palette, terminal-green accents */
+.dark {
+  --theme: #0d1117;
+  --entry: #161b22;
+  --primary: #e6edf3;
+  --secondary: #8b949e;
+  --tertiary: #1c2128;
+  --content: #c9d1d9;
+  --hljs-bg: #161b22;
+  --code-bg: #1a1e24;
+  --border: #30363d;
+}
+
+/* ── Typography ─────────────────────────────────────────────────────────── */
+
+/*
+ * JetBrains Mono is loaded via layouts/partials/extend_head.html.
+ * Applying it globally reinforces the terminal feel. ui-monospace and the
+ * fallback chain cover users whose browser blocks Google Fonts.
+ */
+body,
+nav,
+h1, h2, h3, h4, h5, h6,
+.post-title {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+}
+
+/* ── Link accent colors ─────────────────────────────────────────────────── */
+
+a { color: #1a7f37; }
+a:hover { color: #116329; }
+
+.dark a { color: #3fb950; }
+.dark a:hover { color: #56d364; }
+
+/* Nav links inherit body color; only tint on hover */
+#menu a,
+.dark #menu a { color: inherit; }
+#menu a:hover { color: #1a7f37; }
+.dark #menu a:hover { color: #3fb950; }
+
+/* ── Logo – terminal prompt prefix ──────────────────────────────────────── */
+
+/*
+ * Prepends "> " to the site name so it reads like a shell prompt.
+ * The green color is intentional: it's the classic terminal green.
+ */
+.logo a::before {
+  content: '> ';
+  color: #3fb950;
+}
+
+/* ── Entry cards ────────────────────────────────────────────────────────── */
+
+/* Accent border on hover mirrors the link color */
+.post-entry:hover { border-color: #1a7f37; }
+.dark .post-entry:hover { border-color: #3fb950; }
+
+/* ── Header border ──────────────────────────────────────────────────────── */
+
+header { border-bottom: 1px solid var(--border); }
+
+/* ── Home page blinking cursor ──────────────────────────────────────────── */
+
+/*
+ * Appends a blinking "_" after the last paragraph of the home intro text
+ * (rendered inside .home-info .md-content by the home_info.html partial).
+ * This mimics a terminal waiting for input.
+ */
+.home-info .md-content p:last-child::after {
+  content: '_';
+  color: #3fb950;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
