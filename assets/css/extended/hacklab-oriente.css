@@ -102,3 +102,133 @@ header { border-bottom: 1px solid var(--border); }
 @keyframes blink {
   50% { opacity: 0; }
 }
+
+/* ── Agenda single page ─────────────────────────────────────────────────── */
+
+/*
+ * Info panel sits between the title and the content body.
+ * A green left border and a slightly raised background give it a
+ * terminal-output / spec-sheet feel without being too heavy.
+ */
+.event-info {
+  margin: 1.5rem 0 2rem;
+  padding: 1rem 1.25rem;
+  background: var(--entry);
+  border-left: 3px solid #3fb950;
+  border-radius: 0 6px 6px 0;
+}
+
+:root .event-info { border-left-color: #1a7f37; }
+
+/*
+ * Two-column grid: labels on the left, values on the right.
+ * `display: contents` on each <div class="event-detail"> makes the dt/dd
+ * pairs participate directly in the parent grid rather than creating a
+ * nested block, keeping alignment across all rows without extra markup.
+ */
+.event-details {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.55rem 1.5rem;
+  margin: 0;
+}
+
+.event-detail { display: contents; }
+
+.event-details dt {
+  color: var(--secondary);
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-top: 0.15em;
+  white-space: nowrap;
+}
+
+.event-details dd { margin: 0; }
+
+.event-sep {
+  margin: 0 0.4rem;
+  color: var(--secondary);
+}
+
+.event-tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+/* Back link in the event footer */
+.back-link {
+  font-size: 0.85em;
+  color: var(--secondary);
+  text-decoration: none;
+}
+.dark .back-link:hover { color: #3fb950; }
+.back-link:hover       { color: #1a7f37; }
+
+/* ── Agenda cards ───────────────────────────────────────────────────────── */
+
+.agenda-top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.35rem;
+}
+
+.agenda-date {
+  font-size: 0.78em;
+  color: var(--secondary);
+}
+
+/* Event type badge */
+.event-badge {
+  font-size: 0.6em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 2px 7px;
+  border-radius: 3px;
+  border: 1px solid;
+}
+
+/* Badge colors – dark mode */
+.dark .event-badge.taller   { color: #3fb950; border-color: #3fb95055; }
+.dark .event-badge.tertulia { color: #bc8cff; border-color: #bc8cff55; }
+.dark .event-badge.barcamp  { color: #f0883e; border-color: #f0883e55; }
+.dark .event-badge.social   { color: #58a6ff; border-color: #58a6ff55; }
+
+/* Badge colors – light mode */
+.event-badge.taller   { color: #1a7f37; border-color: #1a7f3755; }
+.event-badge.tertulia { color: #7c3aed; border-color: #7c3aed55; }
+.event-badge.barcamp  { color: #c45000; border-color: #c4500055; }
+.event-badge.social   { color: #0969da; border-color: #0969da55; }
+
+/* Location + speakers row */
+.agenda-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 1.1rem;
+  margin-top: 0.5rem;
+  font-size: 0.8em;
+  color: var(--secondary);
+}
+
+.agenda-location::before { content: '📍 '; }
+.agenda-speakers::before  { content: '👤 '; }
+
+.agenda-speakers a {
+  color: var(--secondary);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--border);
+}
+
+.dark .agenda-speakers a:hover { color: #3fb950; border-color: #3fb950; }
+.agenda-speakers a:hover        { color: #1a7f37; border-color: #1a7f37; }
+
+/* Tags */
+.agenda-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+
+.agenda-tag {
+  font-size: 0.85em;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: var(--tertiary);
+  color: var(--secondary);
+}
