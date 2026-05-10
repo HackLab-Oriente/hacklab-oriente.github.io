@@ -1,5 +1,5 @@
 ---
-title: "Hardware Hacking"
+title: "Circuit Bending / Hardware Hacking"
 date: 2026-11-21
 draft: false
 eventDate: 2026-11-21
