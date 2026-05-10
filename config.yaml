@@ -1,0 +1,45 @@
+baseURL: 'https://hacklaboriente.org/'
+languageCode: 'es-es'
+title: 'Hacklab Oriente'
+theme: 'papermod'
+
+params:
+  env: production
+  defaultTheme: dark
+  disableThemeToggle: false
+  ShowShareButtons: false
+  ShowReadingTime: false
+  ShowBreadCrumbs: false
+  ShowPostNavLinks: false
+  ShowRssButtonInSectionTermList: false
+  disableSpecial1stPost: true
+
+  homeInfoParams:
+    Title: "Hacklab Oriente"
+    Content: "Espacio colaborativo de tecnología, ciberseguridad y proyectos libres."
+
+  mainsections:
+    - posts
+
+menu:
+  main:
+    - identifier: agenda
+      name: Agenda
+      url: /agenda/
+      weight: 10
+    - identifier: proyectos
+      name: Proyectos
+      url: /proyectos/
+      weight: 20
+    - identifier: quienes-somos
+      name: Quiénes Somos
+      url: /quienes-somos/
+      weight: 30
+    - identifier: contacto
+      name: Contáctenos
+      url: /contacto/
+      weight: 40
+    - identifier: archivo
+      name: Archivo
+      url: /archivo/
+      weight: 50
