@@ -19,7 +19,7 @@
 <article class="post-entry agenda-entry">
   <header class="entry-header">
     <div class="agenda-top">
-      <time class="agenda-date">{{ time.Format ":date_long" .Params.eventDate }}</time>
+      {{- with .Params.eventDate }}<time class="agenda-date">{{ time.Format ":date_long" . }}</time>{{- end }}
       {{- with .Params.eventType }}
       <span class="event-badge {{ . }}">{{ . }}</span>
       {{- end }}

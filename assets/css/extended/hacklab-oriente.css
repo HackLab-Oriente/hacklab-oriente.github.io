@@ -133,8 +133,6 @@ header { border-bottom: 1px solid var(--border); }
   margin: 0;
 }
 
-.event-detail { display: contents; }
-
 .event-details dt {
   color: var(--secondary);
   font-size: 0.75em;
