@@ -1,8 +1,8 @@
 ---
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
-date: '{{ .Date }}'
+date: ''        # debe ser igual a eventDate — Hugo usa este campo para ordenar y filtrar
 draft: true
-eventDate: ''
+eventDate: ''   # fecha real del evento (YYYY-MM-DD)
 location: ''
 eventType: 'taller'
 speakers: []
