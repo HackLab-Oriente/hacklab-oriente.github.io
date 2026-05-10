@@ -2,7 +2,6 @@
 title: "Desarrollo agéntico y Spec Programming"
 date: 2026-07-04
 draft: false
-eventDate: 2026-07-04
 location: "Gógoblu"
 eventType: "taller"
 speakers:

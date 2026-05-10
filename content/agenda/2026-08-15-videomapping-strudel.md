@@ -2,7 +2,6 @@
 title: "VJ / Videomapping"
 date: 2026-08-15
 draft: false
-eventDate: 2026-08-15
 location: "Gógoblu"
 eventType: "taller"
 speakers:

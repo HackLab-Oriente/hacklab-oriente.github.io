@@ -2,7 +2,6 @@
 title: "Desktop Buddy – Sesión 1"
 date: 2026-08-29
 draft: false
-eventDate: 2026-08-29
 location: "Gógoblu"
 eventType: "taller"
 speakers: []
