@@ -42,7 +42,7 @@ menu:
       name: Contáctenos
       url: /contacto/
       weight: 40
-    - identifier: archivo
-      name: Archivo
-      url: /archivo/
+    - identifier: memorias
+      name: Memorias
+      url: /memorias/
       weight: 50
