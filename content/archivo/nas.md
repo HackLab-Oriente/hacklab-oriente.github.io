@@ -7,7 +7,7 @@ Más allá de simplemente "guardar archivos", al construir uno mismo un NAS, se 
 soberanía de datos, privacidad real y velocidades que la nube pública no puede igualar.
 Es la diferencia entre alquilar una bodega o ser el dueño de la misma.
 
-# Ponente
+## Ponente
 
 Juan David Hurtado G.
 [@yaazkal](https://github.com/yaazkal)

@@ -8,7 +8,7 @@ abierto que incluye el kernel y el userland (software de usuario).
 Es reconocido por su estabilidad, seguridad y rendimiento. En esta charla se
 compartió conocimiento sobre su historia, características, usos principales, entre otros.
 
-# Ponente
+## Ponente
 
 Juan David Hurtado G.
 [@yaazkal](https://github.com/yaazkal)

@@ -7,7 +7,7 @@ Jails existe antes de que la palabra contenedor se usara para el aislamiento de
 procesos en un sistema operativo. Se explicó el concepto de `jails`, su historia
 y su uso en FreeBSD.
 
-# Ponente
+## Ponente
 
 Juan David Hurtado G.
 [@yaazkal](https://github.com/yaazkal)
