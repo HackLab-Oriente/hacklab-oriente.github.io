@@ -1,5 +1,5 @@
 baseURL: 'https://hacklaboriente.org/'
-languageCode: 'es-es'
+locale: 'es-es'
 title: 'Hacklab Oriente'
 theme: 'papermod'
 
