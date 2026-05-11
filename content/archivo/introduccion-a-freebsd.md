@@ -1,5 +1,5 @@
 ---
-date: '2025-03-01T15:00:00-05:00'
+date: '2025-03-01'
 draft: false
 title: 'Introducción a FreeBSD'
 ---

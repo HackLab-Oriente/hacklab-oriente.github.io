@@ -1,5 +1,5 @@
 ---
-date: '2025-03-15T15:00:00-05:00'
+date: '2025-03-15'
 draft: false
 title: 'Jails (Contenedores) en FreeBSD'
 ---
