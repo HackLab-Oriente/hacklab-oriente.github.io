@@ -1,11 +1,13 @@
 ---
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
-date: '{{ .Date }}'
+date: ''        # fecha del evento (YYYY-MM-DD) — Hugo la usa para ordenar y filtrar
 draft: true
-eventDate: ''
 location: ''
 eventType: 'taller'
 speakers: []
+  # - name: 'Nombre Apellido'
+  #   github: 'handle'   # optional
+  #   url: 'https://...' # optional, for non-GitHub links
 tags: []
 description: ''
 ---

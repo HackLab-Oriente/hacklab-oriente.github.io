@@ -1,0 +1,62 @@
+{{- define "main" }}
+<article class="post-single agenda-single">
+
+  <header class="post-header">
+    <div class="agenda-top">
+      {{- with .Params.eventType }}
+      <span class="event-badge {{ . }}">{{ . }}</span>
+      {{- end }}
+      <time class="agenda-date">{{ time.Format ":date_long" .Date }}</time>
+    </div>
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{- with .Description }}
+    <p class="post-description">{{ . }}</p>
+    {{- end }}
+  </header>
+
+  <div class="event-info">
+    <dl class="event-details">
+
+      {{- with .Params.location }}
+      <dt>Lugar</dt>
+      <dd>{{ . }}</dd>
+      {{- end }}
+
+      {{- with .Params.speakers }}
+      <dt>{{ if gt (len .) 1 }}Ponentes{{ else }}Ponente{{ end }}</dt>
+      <dd>
+        {{- range $i, $s := . -}}
+        {{- if $i }}<span class="event-sep">·</span>{{ end -}}
+        {{- if $s.github -}}
+        <a href="https://github.com/{{ $s.github }}" target="_blank" rel="noopener noreferrer">{{ $s.name }}</a>
+        {{- else if $s.url -}}
+        <a href="{{ $s.url }}" target="_blank" rel="noopener noreferrer">{{ $s.name }}</a>
+        {{- else -}}
+        {{ $s.name }}
+        {{- end -}}
+        {{- end }}
+      </dd>
+      {{- end }}
+
+      {{- with .Params.tags }}
+      <dt>Tags</dt>
+      <dd class="event-tag-list">
+        {{- range . }}<span class="agenda-tag">{{ . }}</span>{{ end }}
+      </dd>
+      {{- end }}
+
+    </dl>
+  </div>
+
+  {{- with .Content }}
+  <div class="post-content md-content">
+    {{- partial "anchored_headings.html" . -}}
+  </div>
+  {{- end }}
+
+  <footer class="post-footer">
+    <a class="back-link" href="{{ .Parent.Permalink }}">← Volver a la agenda</a>
+  </footer>
+
+</article>
+{{- end }}

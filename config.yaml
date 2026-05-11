@@ -2,6 +2,9 @@ baseURL: 'https://hacklaboriente.org/'
 locale: 'es-es'
 title: 'Hacklab Oriente'
 theme: 'papermod'
+buildFuture: true
+pagination:
+  pagerSize: 50
 
 params:
   env: production
