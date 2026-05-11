@@ -1,6 +1,6 @@
 ---
 title: "Tertulia sobre ciencia y tecnología"
-date: 2026-05-23
+date: 2026-05-30
 draft: false
 location: "Gógoblu"
 eventType: "tertulia"
