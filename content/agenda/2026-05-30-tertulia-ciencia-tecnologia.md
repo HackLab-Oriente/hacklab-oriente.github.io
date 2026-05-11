@@ -6,6 +6,9 @@ location: "Gógoblu"
 eventType: "tertulia"
 speakers:
   - name: "Jorge Zuluaga"
+    github: "JorgeZuluaga"
+  - name: "Elkin Botero"
+    github: "cybux"
 tags:
   - "Eventos especiales"
 description: ""
