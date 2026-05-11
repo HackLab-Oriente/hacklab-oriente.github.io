@@ -7,6 +7,7 @@ eventType: "taller"
 speakers:
   - name: "Daniel Pérez"
     github: "dapanas"
-tags: []
+tags:
+  - "Desarrollo"
 description: ""
 ---

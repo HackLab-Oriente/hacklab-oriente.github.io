@@ -7,6 +7,7 @@ eventType: "taller"
 speakers:
   - name: "Unloquer"
     url: "https://unloquer.org/"
-tags: []
+tags:
+  - "Hardware & Making"
 description: ""
 ---

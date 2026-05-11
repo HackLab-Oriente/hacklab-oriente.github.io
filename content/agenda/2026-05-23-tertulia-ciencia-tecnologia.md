@@ -6,6 +6,7 @@ location: "Gógoblu"
 eventType: "tertulia"
 speakers:
   - name: "Jorge Zuluaga"
-tags: []
+tags:
+  - "Eventos especiales"
 description: ""
 ---

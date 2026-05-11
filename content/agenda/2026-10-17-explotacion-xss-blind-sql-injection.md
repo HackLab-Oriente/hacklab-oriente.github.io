@@ -6,6 +6,7 @@ location: "Gógoblu"
 eventType: "taller"
 speakers:
   - name: "Krishna"
-tags: []
+tags:
+  - "Seguridad"
 description: ""
 ---

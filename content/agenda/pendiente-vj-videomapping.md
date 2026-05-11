@@ -7,6 +7,7 @@ eventType: "taller"
 speakers:
   - name: "Luis Guillermo Palacios"
     github: "LuisGuillemoPalaciosGiraldo"
-tags: []
+tags:
+  - "Arte & Multimedia"
 description: ""
 ---

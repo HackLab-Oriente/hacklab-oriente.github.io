@@ -5,6 +5,7 @@ draft: false
 location: "Gógoblu"
 eventType: "social"
 speakers: []
-tags: []
+tags:
+  - "Eventos especiales"
 description: ""
 ---

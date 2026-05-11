@@ -9,6 +9,7 @@ speakers:
     github: "edison-carvajal"
   - name: "Daniel Pérez"
     github: "dapanas"
-tags: []
+tags:
+  - "Inteligencia Artificial"
 description: ""
 ---
