@@ -30,10 +30,6 @@ menu:
       name: Agenda
       url: /agenda/
       weight: 10
-    - identifier: proyectos
-      name: Proyectos
-      url: /proyectos/
-      weight: 20
     - identifier: quienes-somos
       name: Quiénes Somos
       url: /quienes-somos/
