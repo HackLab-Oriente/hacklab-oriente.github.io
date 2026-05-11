@@ -5,6 +5,7 @@ draft: false
 location: "Gógoblu"
 eventType: "taller"
 speakers: []
-tags: []
+tags:
+  - "Desarrollo"
 description: ""
 ---

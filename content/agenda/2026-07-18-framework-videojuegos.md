@@ -7,6 +7,7 @@ eventType: "taller"
 speakers:
   - name: "Kevin Castro"
     github: "kev1n44"
-tags: []
+tags:
+  - "Videojuegos"
 description: ""
 ---

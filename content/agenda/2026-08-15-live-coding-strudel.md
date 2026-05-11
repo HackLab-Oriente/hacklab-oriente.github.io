@@ -1,6 +1,6 @@
 ---
-title: "Circuit Bending / Hardware Hacking"
-date: 2026-11-21
+title: "Live coding y Strudel"
+date: 2026-08-15
 draft: false
 location: "Gógoblu"
 eventType: "taller"
@@ -8,6 +8,6 @@ speakers:
   - name: "Unloquer"
     url: "https://unloquer.org/"
 tags:
-  - "Hardware & Making"
+  - "Arte & Multimedia"
 description: ""
 ---
