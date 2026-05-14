@@ -197,18 +197,25 @@ header { border-bottom: 1px solid var(--border); }
 .event-badge.barcamp  { color: #c45000; border-color: #c4500055; }
 .event-badge.social   { color: #0969da; border-color: #0969da55; }
 
-/* Location + speakers row */
+/* Two stacked rows: location+city, then speakers+tags */
 .agenda-meta {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.4rem 1.1rem;
+  flex-direction: column;
+  gap: 0.4rem;
   margin-top: 0.5rem;
   font-size: 0.8em;
   color: var(--secondary);
 }
 
+.agenda-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 1.1rem;
+}
+
 .agenda-location::before { content: '📍 '; }
+.agenda-city::before { content: '🏢 '; }
 .agenda-speakers::before  { content: '👤 '; }
 
 .agenda-speakers a {

@@ -22,6 +22,11 @@
       <dd>{{ . }}</dd>
       {{- end }}
 
+      {{- with .Params.city }}
+      <dt>Ciudad</dt>
+      <dd>{{ . }}</dd>
+      {{- end }}
+
       {{- with .Params.speakers }}
       <dt>{{ if gt (len .) 1 }}Ponentes{{ else }}Ponente{{ end }}</dt>
       <dd>

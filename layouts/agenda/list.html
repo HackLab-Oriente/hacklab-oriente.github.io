@@ -27,28 +27,35 @@
     <h2>{{ .Title }}</h2>
   </header>
   <div class="agenda-meta">
-    {{- if .Params.location }}
-    <span class="agenda-location">{{ .Params.location }}</span>
-    {{- end }}
-    {{- with .Params.speakers }}
-    <span class="agenda-speakers">
-      {{- range $i, $s := . -}}
-      {{- if $i }} · {{ end -}}
-      {{- if $s.github -}}
-      <a href="https://github.com/{{ $s.github }}" target="_blank" rel="noopener noreferrer">{{ $s.name }}</a>
-      {{- else if $s.url -}}
-      <a href="{{ $s.url }}" target="_blank" rel="noopener noreferrer">{{ $s.name }}</a>
-      {{- else -}}
-      {{ $s.name }}
-      {{- end -}}
+    <div class="agenda-meta-row">
+      {{- if .Params.location }}
+      <span class="agenda-location">{{ .Params.location }}</span>
       {{- end }}
-    </span>
-    {{- end }}
-    {{- with .Params.tags }}
-    <span class="agenda-tags">
-      {{- range . }}<span class="agenda-tag">{{ . }}</span>{{ end }}
-    </span>
-    {{- end }}
+      {{- if .Params.city }}
+      <span class="agenda-city">{{ .Params.city }}</span>
+      {{- end }}
+    </div>
+    <div class="agenda-meta-row">
+      {{- with .Params.speakers }}
+      <span class="agenda-speakers">
+        {{- range $i, $s := . -}}
+        {{- if $i }} · {{ end -}}
+        {{- if $s.github -}}
+        <a href="https://github.com/{{ $s.github }}" target="_blank" rel="noopener noreferrer">{{ $s.name }}</a>
+        {{- else if $s.url -}}
+        <a href="{{ $s.url }}" target="_blank" rel="noopener noreferrer">{{ $s.name }}</a>
+        {{- else -}}
+        {{ $s.name }}
+        {{- end -}}
+        {{- end }}
+      </span>
+      {{- end }}
+      {{- with .Params.tags }}
+      <span class="agenda-tags">
+        {{- range . }}<span class="agenda-tag">{{ . }}</span>{{ end }}
+      </span>
+      {{- end }}
+    </div>
   </div>
   <a class="entry-link" aria-label="{{ .Title | plainify }}" href="{{ .Permalink }}"></a>
 </article>
