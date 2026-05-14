@@ -1,6 +1,6 @@
 ---
 title: "VJ / Videomapping"
-date: 2026-08-15
+date: '2026-08-15'
 draft: true
 location: "Gógoblu"
 city: "El Carmen de Viboral"

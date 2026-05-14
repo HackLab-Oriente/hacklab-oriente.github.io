@@ -1,4 +1,5 @@
 {{- define "main" }}
+{{- $hhmm := time.Format "15:04" .Date }}
 <article class="post-single agenda-single">
 
   <header class="post-header">
@@ -6,7 +7,7 @@
       {{- with .Params.eventType }}
       <span class="event-badge {{ . }}">{{ . }}</span>
       {{- end }}
-      <time class="agenda-date">{{ time.Format ":date_long" .Date }}</time>
+      <time class="agenda-date">{{ time.Format ":date_long" .Date }} 🕑 {{ if eq $hhmm "00:00" }}Por definir{{ else }}{{ $hhmm }}{{ end }}</time>
     </div>
     <h1 class="post-title">{{ .Title }}</h1>
     {{- with .Description }}
@@ -16,6 +17,12 @@
 
   <div class="event-info">
     <dl class="event-details">
+
+      <dt>Fecha</dt>
+      <dd>{{ time.Format ":date_long" .Date }}</dd>
+
+      <dt>Hora</dt>
+      <dd>{{ if eq $hhmm "00:00" }}Por definir{{ else }}{{ $hhmm }}{{ end }}</dd>
 
       {{- with .Params.location }}
       <dt>Lugar</dt>

@@ -1,6 +1,6 @@
 ---
 title: "Framework de Videojuegos"
-date: 2026-07-18
+date: '2026-07-18T14:00:00-05:00'
 draft: false
 location: "Gógoblu"
 city: "El Carmen de Viboral"
