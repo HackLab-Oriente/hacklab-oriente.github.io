@@ -3,6 +3,7 @@ title: "Desarrollo agéntico y Spec Programming"
 date: 2026-07-04
 draft: false
 location: "Gógoblu"
+city: "El Carmen de Viboral"
 eventType: "taller"
 speakers:
   - name: "Edison Carvajal"
