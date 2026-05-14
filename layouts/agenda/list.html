@@ -19,7 +19,8 @@
 <article class="post-entry agenda-entry">
   <header class="entry-header">
     <div class="agenda-top">
-      <time class="agenda-date">{{ time.Format ":date_long" .Date }}</time>
+      {{- $hhmm := time.Format "15:04" .Date }}
+      <time class="agenda-date">{{ time.Format ":date_long" .Date }} 🕑 {{ if eq $hhmm "00:00" }}Por definir{{ else }}{{ $hhmm }}{{ end }}</time>
       {{- with .Params.eventType }}
       <span class="event-badge {{ . }}">{{ . }}</span>
       {{- end }}
