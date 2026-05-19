@@ -6,8 +6,8 @@
  * styling to give the site a terminal/hacker aesthetic while keeping it
  * readable. All changes are additive – no PaperMod files are modified.
  *
- * PaperMod applies the `.dark` class to <body> when dark mode is active.
- * Variables declared under `.dark` override the defaults in `:root`.
+ * PaperMod sets the `data-theme="dark"` attribute on <body> when dark mode is active.
+ * Variables declared under the `[data-theme="dark"]` attribute selector override the defaults in `:root`.
  */
 
 /* ── Color palette ──────────────────────────────────────────────────────── */
@@ -25,7 +25,7 @@
 }
 
 /* Dark mode: GitHub-dark palette, terminal-green accents */
-.dark {
+[data-theme="dark"] {
   --theme: #0d1117;
   --entry: #161b22;
   --primary: #e6edf3;
@@ -65,31 +65,42 @@ h1, h2, h3, h4, h5, h6,
 a { color: #0a8e8e; }
 a:hover { color: #066; }
 
-.dark a { color: #00d4d4; }
-.dark a:hover { color: #5ce5e5; }
+[data-theme="dark"] a { color: #00d4d4; }
+[data-theme="dark"] a:hover { color: #5ce5e5; }
 
 /* Nav links inherit body color; only tint on hover */
 #menu a,
-.dark #menu a { color: inherit; }
+[data-theme="dark"] #menu a { color: inherit; }
 #menu a:hover { color: #0a8e8e; }
-.dark #menu a:hover { color: #00d4d4; }
+[data-theme="dark"] #menu a:hover { color: #00d4d4; }
 
-/* ── Logo – terminal prompt prefix ──────────────────────────────────────── */
+/* ── Logo – brand mark in nav ───────────────────────────────────────────── */
 
 /*
- * Prepends "# " to the site name so it reads like a root shell prompt.
- * The cyan accent color is intentional and matches the current brand styling.
+ * The header logo is the logosímbolo PNG, with two variants swapped via
+ * the `[data-theme="dark"]` class that PaperMod toggles on <body>. Default = light bg
+ * variant; `[data-theme="dark"]` flips to the dark-bg circular variant.
  */
-.logo a::before {
-  content: '# ';
-  color: #00d4d4;
+.logo a {
+  display: inline-flex;
+  align-items: center;
 }
+
+.brand-mark {
+  display: block;
+  height: 36px;
+  width: auto;
+}
+
+.logo .brand-mark--dark { display: none; }
+[data-theme="dark"] .logo .brand-mark--light { display: none; }
+[data-theme="dark"] .logo .brand-mark--dark { display: block; }
 
 /* ── Entry cards ────────────────────────────────────────────────────────── */
 
 /* Accent border on hover mirrors the link color */
 .post-entry:hover { border-color: #0a8e8e; }
-.dark .post-entry:hover { border-color: #00d4d4; }
+[data-theme="dark"] .post-entry:hover { border-color: #00d4d4; }
 
 /* ── Header border ──────────────────────────────────────────────────────── */
 
@@ -127,7 +138,7 @@ header { border-bottom: 1px solid var(--border); }
   border-radius: 0 6px 6px 0;
 }
 
-.dark .event-info { border-left-color: #00d4d4; }
+[data-theme="dark"] .event-info { border-left-color: #00d4d4; }
 
 /*
  * Two-column grid: labels on the left, values on the right.
@@ -166,7 +177,7 @@ header { border-bottom: 1px solid var(--border); }
   color: var(--secondary);
   text-decoration: none;
 }
-.dark .back-link:hover { color: #00d4d4; }
+[data-theme="dark"] .back-link:hover { color: #00d4d4; }
 .back-link:hover       { color: #0a8e8e; }
 
 /* ── Agenda cards ───────────────────────────────────────────────────────── */
@@ -288,10 +299,10 @@ header { border-bottom: 1px solid var(--border); }
 }
 
 /* Badge colors – dark mode */
-.dark .event-badge.taller   { color: #00d4d4; border-color: #00d4d455; }
-.dark .event-badge.tertulia { color: #bc8cff; border-color: #bc8cff55; }
-.dark .event-badge.barcamp  { color: #f0883e; border-color: #f0883e55; }
-.dark .event-badge.social   { color: #58a6ff; border-color: #58a6ff55; }
+[data-theme="dark"] .event-badge.taller   { color: #00d4d4; border-color: #00d4d455; }
+[data-theme="dark"] .event-badge.tertulia { color: #bc8cff; border-color: #bc8cff55; }
+[data-theme="dark"] .event-badge.barcamp  { color: #f0883e; border-color: #f0883e55; }
+[data-theme="dark"] .event-badge.social   { color: #58a6ff; border-color: #58a6ff55; }
 
 /* Badge colors – light mode */
 .event-badge.taller   { color: #0a8e8e; border-color: #0a8e8e55; }
@@ -326,7 +337,7 @@ header { border-bottom: 1px solid var(--border); }
   border-bottom: 1px dotted var(--border);
 }
 
-.dark .agenda-speakers a:hover { color: #00d4d4; border-color: #00d4d4; }
+[data-theme="dark"] .agenda-speakers a:hover { color: #00d4d4; border-color: #00d4d4; }
 .agenda-speakers a:hover        { color: #0a8e8e; border-color: #0a8e8e; }
 
 /* Tags */
@@ -338,4 +349,98 @@ header { border-bottom: 1px solid var(--border); }
   border-radius: 3px;
   background: var(--tertiary);
   color: var(--secondary);
+}
+
+/* ── Home page hero ─────────────────────────────────────────────────────── */
+
+/*
+ * Custom homepage layout: large centered brand logo, optional intro text,
+ * and a row of section cards linking to the main areas of the site.
+ * Image variants swap on `[data-theme="dark"]` like the header brand-mark.
+ */
+.home-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+}
+
+.home-hero-logo {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  margin: 1rem auto 2rem;
+}
+
+.brand-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.brand-logo--dark { display: none; }
+[data-theme="dark"] .brand-logo--light { display: none; }
+[data-theme="dark"] .brand-logo--dark { display: block; }
+
+.home-hero-intro {
+  max-width: 38rem;
+  color: var(--secondary);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  margin: 0 0 2.5rem;
+}
+
+/* Section cards row */
+.home-sections {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.home-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--entry);
+  color: var(--primary);
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.home-section:hover {
+  border-color: #0a8e8e;
+  transform: translateY(-2px);
+}
+[data-theme="dark"] .home-section:hover { border-color: #00d4d4; }
+
+.home-section-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.home-section-title {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.home-section-desc {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+  color: var(--secondary);
+}
+
+@media (max-width: 640px) {
+  .home-sections {
+    grid-template-columns: 1fr;
+  }
+  .home-hero-logo { max-width: 320px; }
 }
