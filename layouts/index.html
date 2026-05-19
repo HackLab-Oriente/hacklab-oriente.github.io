@@ -1,0 +1,30 @@
+{{- define "main" }}
+<section class="home-hero">
+    <picture class="home-hero-logo">
+        <img class="brand-logo brand-logo--light" src="{{ "img/logo-light.png" | absURL }}" alt="{{ site.Title }}">
+        <img class="brand-logo brand-logo--dark"  src="{{ "img/logo-dark.png"  | absURL }}" alt="{{ site.Title }}">
+    </picture>
+
+    {{- with .Content }}
+    <div class="home-hero-intro">{{ . }}</div>
+    {{- end }}
+
+    <nav class="home-sections" aria-label="Secciones principales">
+        <a class="home-section" href="{{ "agenda/" | absURL }}">
+            <span class="home-section-icon" aria-hidden="true">&#x1F4C5;</span>
+            <span class="home-section-title">Agenda</span>
+            <span class="home-section-desc">Próximos talleres y eventos</span>
+        </a>
+        <a class="home-section" href="{{ "quienes-somos/" | absURL }}">
+            <span class="home-section-icon" aria-hidden="true">&#x1F465;</span>
+            <span class="home-section-title">Nosotros</span>
+            <span class="home-section-desc">Quiénes somos y qué hacemos</span>
+        </a>
+        <a class="home-section" href="{{ "memorias/" | absURL }}">
+            <span class="home-section-icon" aria-hidden="true">&#x1F4DA;</span>
+            <span class="home-section-title">Memorias</span>
+            <span class="home-section-desc">Registros de talleres pasados</span>
+        </a>
+    </nav>
+</section>
+{{- end }}
