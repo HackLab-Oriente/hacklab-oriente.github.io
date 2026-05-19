@@ -62,17 +62,17 @@ h1, h2, h3, h4, h5, h6,
 
 /* ── Link accent colors ─────────────────────────────────────────────────── */
 
-a { color: #1a7f37; }
-a:hover { color: #116329; }
+a { color: #0a8e8e; }
+a:hover { color: #066; }
 
-.dark a { color: #3fb950; }
-.dark a:hover { color: #56d364; }
+.dark a { color: #00d4d4; }
+.dark a:hover { color: #5ce5e5; }
 
 /* Nav links inherit body color; only tint on hover */
 #menu a,
 .dark #menu a { color: inherit; }
-#menu a:hover { color: #1a7f37; }
-.dark #menu a:hover { color: #3fb950; }
+#menu a:hover { color: #0a8e8e; }
+.dark #menu a:hover { color: #00d4d4; }
 
 /* ── Logo – terminal prompt prefix ──────────────────────────────────────── */
 
@@ -82,14 +82,14 @@ a:hover { color: #116329; }
  */
 .logo a::before {
   content: '# ';
-  color: #3fb950;
+  color: #00d4d4;
 }
 
 /* ── Entry cards ────────────────────────────────────────────────────────── */
 
 /* Accent border on hover mirrors the link color */
-.post-entry:hover { border-color: #1a7f37; }
-.dark .post-entry:hover { border-color: #3fb950; }
+.post-entry:hover { border-color: #0a8e8e; }
+.dark .post-entry:hover { border-color: #00d4d4; }
 
 /* ── Header border ──────────────────────────────────────────────────────── */
 
@@ -104,7 +104,7 @@ header { border-bottom: 1px solid var(--border); }
  */
 .home-info .md-content p:last-child::after {
   content: '_';
-  color: #3fb950;
+  color: #00d4d4;
   animation: blink 1s step-end infinite;
 }
 
@@ -123,11 +123,11 @@ header { border-bottom: 1px solid var(--border); }
   margin: 1.5rem 0 2rem;
   padding: 1rem 1.25rem;
   background: var(--entry);
-  border-left: 3px solid #1a7f37;
+  border-left: 3px solid #0a8e8e;
   border-radius: 0 6px 6px 0;
 }
 
-.dark .event-info { border-left-color: #3fb950; }
+.dark .event-info { border-left-color: #00d4d4; }
 
 /*
  * Two-column grid: labels on the left, values on the right.
@@ -166,8 +166,8 @@ header { border-bottom: 1px solid var(--border); }
   color: var(--secondary);
   text-decoration: none;
 }
-.dark .back-link:hover { color: #3fb950; }
-.back-link:hover       { color: #1a7f37; }
+.dark .back-link:hover { color: #00d4d4; }
+.back-link:hover       { color: #0a8e8e; }
 
 /* ── Agenda cards ───────────────────────────────────────────────────────── */
 
@@ -195,13 +195,13 @@ header { border-bottom: 1px solid var(--border); }
 }
 
 /* Badge colors – dark mode */
-.dark .event-badge.taller   { color: #3fb950; border-color: #3fb95055; }
+.dark .event-badge.taller   { color: #00d4d4; border-color: #00d4d455; }
 .dark .event-badge.tertulia { color: #bc8cff; border-color: #bc8cff55; }
 .dark .event-badge.barcamp  { color: #f0883e; border-color: #f0883e55; }
 .dark .event-badge.social   { color: #58a6ff; border-color: #58a6ff55; }
 
 /* Badge colors – light mode */
-.event-badge.taller   { color: #1a7f37; border-color: #1a7f3755; }
+.event-badge.taller   { color: #0a8e8e; border-color: #0a8e8e55; }
 .event-badge.tertulia { color: #7c3aed; border-color: #7c3aed55; }
 .event-badge.barcamp  { color: #c45000; border-color: #c4500055; }
 .event-badge.social   { color: #0969da; border-color: #0969da55; }
@@ -233,8 +233,8 @@ header { border-bottom: 1px solid var(--border); }
   border-bottom: 1px dotted var(--border);
 }
 
-.dark .agenda-speakers a:hover { color: #3fb950; border-color: #3fb950; }
-.agenda-speakers a:hover        { color: #1a7f37; border-color: #1a7f37; }
+.dark .agenda-speakers a:hover { color: #00d4d4; border-color: #00d4d4; }
+.agenda-speakers a:hover        { color: #0a8e8e; border-color: #0a8e8e; }
 
 /* Tags */
 .agenda-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
