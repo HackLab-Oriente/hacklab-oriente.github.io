@@ -40,15 +40,24 @@
 /* ── Typography ─────────────────────────────────────────────────────────── */
 
 /*
- * JetBrains Mono is loaded via layouts/partials/extend_head.html.
- * Applying it globally reinforces the terminal feel. ui-monospace and the
- * fallback chain cover users whose browser blocks Google Fonts.
+ * Jost (titles) and IBM Plex Sans (body) are loaded via
+ * layouts/partials/extend_head.html.
  */
-body,
+body {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
 nav,
 h1, h2, h3, h4, h5, h6,
-.post-title {
-  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+.post-title,
+.logo a {
+  font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* List-entry titles use a lighter weight so they read as items, not headings */
+.post-entry .entry-header h2,
+.first-entry .entry-header h2 {
+  font-weight: 500;
 }
 
 /* ── Link accent colors ─────────────────────────────────────────────────── */
@@ -68,11 +77,11 @@ a:hover { color: #116329; }
 /* ── Logo – terminal prompt prefix ──────────────────────────────────────── */
 
 /*
- * Prepends "> " to the site name so it reads like a shell prompt.
+ * Prepends "# " to the site name so it reads like a root shell prompt.
  * The green color is intentional: it's the classic terminal green.
  */
 .logo a::before {
-  content: '> ';
+  content: '# ';
   color: #3fb950;
 }
 
