@@ -171,22 +171,101 @@ header { border-bottom: 1px solid var(--border); }
 
 /* ── Agenda cards ───────────────────────────────────────────────────────── */
 
-.agenda-top {
+/*
+ * Two-column layout: a calendar-style date box on the left, the event
+ * details on the right. The body's <header> uses the global
+ * `header { border-bottom }` rule to draw the separator below the title.
+ */
+.agenda-card {
   display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 0.35rem;
+  gap: 1.25rem;
+  align-items: stretch;
 }
 
-.agenda-date {
-  font-size: 0.78em;
+.agenda-date-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--theme);
+  min-width: 7rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.agenda-date-month {
+  font-family: 'Jost', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--primary);
+  text-transform: capitalize;
+}
+
+.agenda-date-day {
+  font-family: 'Jost', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0.25rem 0 0.35rem;
+  color: var(--primary);
+}
+
+.agenda-date-time {
+  font-size: 0.78rem;
   color: var(--secondary);
+  white-space: nowrap;
+}
+
+.agenda-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.agenda-body .entry-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+  margin-bottom: 0.55rem;
+}
+
+.agenda-body .entry-header h2 {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+/* Stack the date box above the body on narrow screens */
+@media (max-width: 480px) {
+  .agenda-card {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .agenda-date-box {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    min-width: 0;
+    padding: 0.5rem 0.8rem;
+  }
+  .agenda-date-day {
+    font-size: 1.6rem;
+    margin: 0;
+  }
 }
 
 /* Event type badge */
 .event-badge {
-  font-size: 0.6em;
-  font-weight: 700;
+  font-size: 0.4em;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 2px 7px;
