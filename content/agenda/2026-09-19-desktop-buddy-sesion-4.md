@@ -8,5 +8,5 @@ eventType: "taller"
 speakers: []
 tags:
   - "Desarrollo"
-description: ""
+description: "Cuarta y última sesión del ciclo Desktop Buddy: cierre, empaquetado y demo de la aplicación de escritorio construida."
 ---

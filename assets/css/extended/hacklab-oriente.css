@@ -152,7 +152,16 @@ header { border-bottom: 1px solid var(--border); }
   border-radius: 0 6px 6px 0;
 }
 
-.event-info--with-date {
+.event-info-description {
+  margin: 0 0 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--primary);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.event-info-body {
   display: flex;
   align-items: stretch;
   gap: 1.5rem;
@@ -165,14 +174,14 @@ header { border-bottom: 1px solid var(--border); }
 .event-info-date-box .agenda-date-day {
   font-size: 3.2rem;
 }
-.event-info--with-date .event-details {
+.event-info-body .event-details {
   flex: 1;
   align-content: center;
 }
 @media (max-width: 768px) {
   .event-info-date-box,
   .agenda-date-box.event-info-date-box { display: none !important; }
-  .event-info--with-date { display: block; }
+  .event-info-body { display: block; }
 }
 
 [data-theme="dark"] .event-info { border-left-color: #00d4d4; }

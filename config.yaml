@@ -3,6 +3,7 @@ locale: 'es-es'
 title: 'HACKLAB Oriente'
 theme: 'papermod'
 buildFuture: true
+enableRobotsTXT: true
 pagination:
   pagerSize: 50
 
@@ -16,6 +17,21 @@ params:
   ShowPostNavLinks: false
   ShowRssButtonInSectionTermList: false
   disableSpecial1stPost: true
+  description: "Hacklab Oriente — colectivo de tecnología, ciberseguridad, IA y software libre en el Oriente Antioqueño."
+  keywords:
+    - hacklab
+    - oriente antioqueño
+    - ciberseguridad
+    - software libre
+    - tecnología
+    - talleres
+    - Antioquia
+    - El Carmen de Viboral
+    - Rionegro
+    - Colombia
+  author: "Hacklab Oriente"
+  images:
+    - img/og-default.png
 
   homeInfoParams:
     Title: "Hacklab Oriente"
@@ -26,6 +42,10 @@ params:
 
 menu:
   main:
+    - identifier: inicio
+      name: Inicio
+      url: /
+      weight: 1
     - identifier: agenda
       name: Agenda
       url: /agenda/

@@ -10,5 +10,5 @@ speakers:
     url: "https://unloquer.org/"
 tags:
   - "Arte & Multimedia"
-description: ""
+description: "Sesión de live coding musical con Strudel a cargo de Unloquer. Crea patrones sonoros en vivo usando código."
 ---

@@ -8,5 +8,5 @@ eventType: "taller"
 speakers: []
 tags:
   - "Desarrollo"
-description: ""
+description: "Tercera sesión del ciclo Desktop Buddy: avanzamos en funcionalidades y refinamos la aplicación de escritorio."
 ---

@@ -10,5 +10,5 @@ speakers:
     url: "https://unloquer.org/"
 tags:
   - "Hardware & Making"
-description: ""
+description: "Taller de Circuit Bending y hardware hacking con Unloquer: intervenir, modificar y reinventar circuitos electrónicos."
 ---

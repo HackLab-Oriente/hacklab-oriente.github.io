@@ -10,5 +10,5 @@ speakers:
     github: "dapanas"
 tags:
   - "Inteligencia Artificial"
-description: ""
+description: "Taller Paperclip: exploración práctica de inteligencia artificial, alineamiento y los riesgos del optimizador maximalista."
 ---

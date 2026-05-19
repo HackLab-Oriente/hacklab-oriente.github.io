@@ -8,5 +8,5 @@ eventType: "social"
 speakers: []
 tags:
   - "Eventos especiales"
-description: ""
+description: "NatillaCamp: encuentro social de fin de año de Hacklab Oriente. Comunidad, conversación y celebración."
 ---

@@ -8,5 +8,5 @@ eventType: "taller"
 speakers: []
 tags:
   - "Desarrollo"
-description: ""
+description: "Primera sesión del ciclo Desktop Buddy: construyamos juntos una aplicación de escritorio paso a paso."
 ---

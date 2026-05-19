@@ -10,5 +10,5 @@ speakers:
     github: "dapanas"
 tags:
   - "Desarrollo"
-description: ""
+description: "Taller para entender los fundamentos del desarrollo de software sin necesidad de ser programador. Conceptos, herramientas y mentalidad."
 ---
