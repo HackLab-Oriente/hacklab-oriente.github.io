@@ -2,8 +2,8 @@
     <nav class="header-nav">
         <div class="logo">
             <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ site.Title }} (Alt + H)" aria-label="{{ site.Title }}">
-                <img class="brand-mark brand-mark--light" src="{{ "img/logosimbolo-light.png" | absURL }}" alt="{{ site.Title }}" height="36">
-                <img class="brand-mark brand-mark--dark"  src="{{ "img/logosimbolo-dark.png"  | absURL }}" alt="{{ site.Title }}" height="36">
+                <img class="brand-mark brand-mark--light" src="{{ "img/logosimbolo-light-background.svg" | absURL }}" alt="{{ site.Title }}" height="36">
+                <img class="brand-mark brand-mark--dark"  src="{{ "img/logosimbolo-dark-background.svg"  | absURL }}" alt="{{ site.Title }}" height="36">
             </a>
 
             {{- $lsenabled := (or (not site.Params.disableThemeToggle) (and (not site.Params.disableLangToggle) (hugo.IsMultilingual))) }}
