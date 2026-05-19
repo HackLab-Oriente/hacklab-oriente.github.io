@@ -1,5 +1,10 @@
 {{- define "main" }}
 {{- $hhmm := time.Format "15:04" .Date }}
+{{- $monthNames := slice "" "Enero" "Febrero" "Marzo" "Abril" "Mayo" "Junio" "Julio" "Agosto" "Septiembre" "Octubre" "Noviembre" "Diciembre" }}
+{{- $monthNum := int (time.Format "1" .Date) }}
+{{- $month := index $monthNames $monthNum }}
+{{- $day := time.Format "2" .Date }}
+{{- $year := time.Format "2006" .Date }}
 <article class="post-single agenda-single">
 
   <header class="post-header">
@@ -12,7 +17,12 @@
     {{- end }}
   </header>
 
-  <div class="event-info">
+  <div class="event-info event-info--with-date">
+    <div class="agenda-date-box event-info-date-box" aria-hidden="true">
+      <span class="agenda-date-month">{{ $month }}</span>
+      <span class="agenda-date-day">{{ $day }}</span>
+      <span class="agenda-date-time">{{ if eq $hhmm "00:00" }}--:--{{ else }}{{ $hhmm }}{{ end }} / {{ $year }}</span>
+    </div>
     <dl class="event-details">
 
       <dt><span class="dt-emoji">🗓️ </span>Fecha</dt>

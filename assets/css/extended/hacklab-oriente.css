@@ -152,6 +152,29 @@ header { border-bottom: 1px solid var(--border); }
   border-radius: 0 6px 6px 0;
 }
 
+.event-info--with-date {
+  display: flex;
+  align-items: stretch;
+  gap: 1.5rem;
+}
+.event-info-date-box {
+  align-self: stretch;
+  min-width: 8.5rem;
+  padding: 1rem 1.1rem;
+}
+.event-info-date-box .agenda-date-day {
+  font-size: 3.2rem;
+}
+.event-info--with-date .event-details {
+  flex: 1;
+  align-content: center;
+}
+@media (max-width: 768px) {
+  .event-info-date-box,
+  .agenda-date-box.event-info-date-box { display: none !important; }
+  .event-info--with-date { display: block; }
+}
+
 [data-theme="dark"] .event-info { border-left-color: #00d4d4; }
 
 /*
