@@ -3,13 +3,10 @@
 <article class="post-single agenda-single">
 
   <header class="post-header">
-    <div class="agenda-top">
-      {{- with .Params.eventType }}
-      <span class="event-badge {{ . }}">{{ . }}</span>
-      {{- end }}
-      <time class="agenda-date">{{ time.Format ":date_long" .Date }} 🕑 {{ if eq $hhmm "00:00" }}Por definir{{ else }}{{ $hhmm }}{{ end }}</time>
-    </div>
-    <h1 class="post-title">{{ .Title }}</h1>
+    <h1 class="post-title agenda-single-title">
+      <span class="agenda-single-title-text">{{ .Title }}</span>
+      {{- with .Params.eventType }} <span class="event-badge {{ . }}">{{ . }}</span>{{ end -}}
+    </h1>
     {{- with .Description }}
     <p class="post-description">{{ . }}</p>
     {{- end }}
@@ -18,24 +15,24 @@
   <div class="event-info">
     <dl class="event-details">
 
-      <dt>Fecha</dt>
+      <dt><span class="dt-emoji">🗓️ </span>Fecha</dt>
       <dd>{{ time.Format ":date_long" .Date }}</dd>
 
-      <dt>Hora</dt>
-      <dd>{{ if eq $hhmm "00:00" }}Por definir{{ else }}{{ $hhmm }}{{ end }}</dd>
-
       {{- with .Params.location }}
-      <dt>Lugar</dt>
+      <dt><span class="dt-emoji">📍 </span>Lugar</dt>
       <dd>{{ . }}</dd>
       {{- end }}
 
+      <dt><span class="dt-emoji">🕑 </span>Hora</dt>
+      <dd>{{ if eq $hhmm "00:00" }}Por definir{{ else }}{{ $hhmm }}{{ end }}</dd>
+
       {{- with .Params.city }}
-      <dt>Ciudad</dt>
+      <dt><span class="dt-emoji">🏢 </span>Ciudad</dt>
       <dd>{{ . }}</dd>
       {{- end }}
 
       {{- with .Params.speakers }}
-      <dt>{{ if gt (len .) 1 }}Ponentes{{ else }}Ponente{{ end }}</dt>
+      <dt><span class="dt-emoji">👤 </span>{{ if gt (len .) 1 }}Ponentes{{ else }}Ponente{{ end }}</dt>
       <dd>
         {{- range $i, $s := . -}}
         {{- if $i }}<span class="event-sep">·</span>{{ end -}}
@@ -51,7 +48,7 @@
       {{- end }}
 
       {{- with .Params.tags }}
-      <dt>Tags</dt>
+      <dt><span class="dt-emoji">🏷️ </span>Tags</dt>
       <dd class="event-tag-list">
         {{- range . }}<span class="agenda-tag">{{ . }}</span>{{ end }}
       </dd>

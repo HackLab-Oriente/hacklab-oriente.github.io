@@ -60,6 +60,20 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 500;
 }
 
+/* Single event header: title with badge inline-right, vertically centered */
+.agenda-single-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.agenda-single-title .event-badge {
+  align-self: center;
+  line-height: 1;
+  font-size: 0.85rem;
+  padding: 3px 7px;
+}
+
 /* ── Link accent colors ─────────────────────────────────────────────────── */
 
 a { color: #0a8e8e; }
@@ -148,9 +162,20 @@ header { border-bottom: 1px solid var(--border); }
  */
 .event-details {
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: max-content 1fr max-content 1fr;
   gap: 0.55rem 1.5rem;
   margin: 0;
+}
+
+@media (max-width: 600px) {
+  .event-details {
+    grid-template-columns: max-content 1fr;
+  }
+}
+
+.event-details .dt-emoji { display: none; }
+@media (max-width: 600px) {
+  .event-details .dt-emoji { display: inline; }
 }
 
 .event-details dt {
