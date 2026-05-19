@@ -15,24 +15,24 @@
   <div class="event-info">
     <dl class="event-details">
 
-      <dt>Fecha</dt>
+      <dt>🗓️ Fecha</dt>
       <dd>{{ time.Format ":date_long" .Date }}</dd>
 
-      <dt>Hora</dt>
+      <dt>🕑 Hora</dt>
       <dd>{{ if eq $hhmm "00:00" }}Por definir{{ else }}{{ $hhmm }}{{ end }}</dd>
 
       {{- with .Params.location }}
-      <dt>Lugar</dt>
+      <dt>📍 Lugar</dt>
       <dd>{{ . }}</dd>
       {{- end }}
 
       {{- with .Params.city }}
-      <dt>Ciudad</dt>
+      <dt>🏢 Ciudad</dt>
       <dd>{{ . }}</dd>
       {{- end }}
 
       {{- with .Params.speakers }}
-      <dt>{{ if gt (len .) 1 }}Ponentes{{ else }}Ponente{{ end }}</dt>
+      <dt>👤 {{ if gt (len .) 1 }}Ponentes{{ else }}Ponente{{ end }}</dt>
       <dd>
         {{- range $i, $s := . -}}
         {{- if $i }}<span class="event-sep">·</span>{{ end -}}
@@ -48,7 +48,7 @@
       {{- end }}
 
       {{- with .Params.tags }}
-      <dt>Tags</dt>
+      <dt>🏷️ Tags</dt>
       <dd class="event-tag-list">
         {{- range . }}<span class="agenda-tag">{{ . }}</span>{{ end }}
       </dd>
