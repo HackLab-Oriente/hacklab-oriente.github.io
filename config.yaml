@@ -1,6 +1,6 @@
 baseURL: 'https://hacklaboriente.org/'
 locale: 'es-es'
-title: 'Hacklab Oriente'
+title: 'HACKLAB Oriente'
 theme: 'papermod'
 buildFuture: true
 pagination:
@@ -8,7 +8,7 @@ pagination:
 
 params:
   env: production
-  defaultTheme: dark
+  defaultTheme: auto
   disableThemeToggle: false
   ShowShareButtons: false
   ShowReadingTime: false

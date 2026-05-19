@@ -40,47 +40,56 @@
 /* ── Typography ─────────────────────────────────────────────────────────── */
 
 /*
- * JetBrains Mono is loaded via layouts/partials/extend_head.html.
- * Applying it globally reinforces the terminal feel. ui-monospace and the
- * fallback chain cover users whose browser blocks Google Fonts.
+ * Jost (titles) and IBM Plex Sans (body) are loaded via
+ * layouts/partials/extend_head.html.
  */
-body,
+body {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
 nav,
 h1, h2, h3, h4, h5, h6,
-.post-title {
-  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+.post-title,
+.logo a {
+  font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* List-entry titles use a lighter weight so they read as items, not headings */
+.post-entry .entry-header h2,
+.first-entry .entry-header h2 {
+  font-weight: 500;
 }
 
 /* ── Link accent colors ─────────────────────────────────────────────────── */
 
-a { color: #1a7f37; }
-a:hover { color: #116329; }
+a { color: #0a8e8e; }
+a:hover { color: #066; }
 
-.dark a { color: #3fb950; }
-.dark a:hover { color: #56d364; }
+.dark a { color: #00d4d4; }
+.dark a:hover { color: #5ce5e5; }
 
 /* Nav links inherit body color; only tint on hover */
 #menu a,
 .dark #menu a { color: inherit; }
-#menu a:hover { color: #1a7f37; }
-.dark #menu a:hover { color: #3fb950; }
+#menu a:hover { color: #0a8e8e; }
+.dark #menu a:hover { color: #00d4d4; }
 
 /* ── Logo – terminal prompt prefix ──────────────────────────────────────── */
 
 /*
- * Prepends "> " to the site name so it reads like a shell prompt.
- * The green color is intentional: it's the classic terminal green.
+ * Prepends "# " to the site name so it reads like a root shell prompt.
+ * The cyan accent color is intentional and matches the current brand styling.
  */
 .logo a::before {
-  content: '> ';
-  color: #3fb950;
+  content: '# ';
+  color: #00d4d4;
 }
 
 /* ── Entry cards ────────────────────────────────────────────────────────── */
 
 /* Accent border on hover mirrors the link color */
-.post-entry:hover { border-color: #1a7f37; }
-.dark .post-entry:hover { border-color: #3fb950; }
+.post-entry:hover { border-color: #0a8e8e; }
+.dark .post-entry:hover { border-color: #00d4d4; }
 
 /* ── Header border ──────────────────────────────────────────────────────── */
 
@@ -95,7 +104,7 @@ header { border-bottom: 1px solid var(--border); }
  */
 .home-info .md-content p:last-child::after {
   content: '_';
-  color: #3fb950;
+  color: #00d4d4;
   animation: blink 1s step-end infinite;
 }
 
@@ -114,11 +123,11 @@ header { border-bottom: 1px solid var(--border); }
   margin: 1.5rem 0 2rem;
   padding: 1rem 1.25rem;
   background: var(--entry);
-  border-left: 3px solid #1a7f37;
+  border-left: 3px solid #0a8e8e;
   border-radius: 0 6px 6px 0;
 }
 
-.dark .event-info { border-left-color: #3fb950; }
+.dark .event-info { border-left-color: #00d4d4; }
 
 /*
  * Two-column grid: labels on the left, values on the right.
@@ -157,27 +166,120 @@ header { border-bottom: 1px solid var(--border); }
   color: var(--secondary);
   text-decoration: none;
 }
-.dark .back-link:hover { color: #3fb950; }
-.back-link:hover       { color: #1a7f37; }
+.dark .back-link:hover { color: #00d4d4; }
+.back-link:hover       { color: #0a8e8e; }
 
 /* ── Agenda cards ───────────────────────────────────────────────────────── */
 
-.agenda-top {
+/*
+ * Two-column layout: a calendar-style date box on the left, the event
+ * details on the right. The title separator is drawn by the header border
+ * styling, including the agenda-specific `.agenda-body .entry-header`
+ * rule defined later in this stylesheet.
+ */
+.agenda-card {
   display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 0.35rem;
+  gap: 1.25rem;
+  align-items: flex-start;
 }
 
-.agenda-date {
-  font-size: 0.78em;
+.agenda-date-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--theme);
+  min-width: 7rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.agenda-date-month {
+  font-family: 'Jost', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--primary);
+  text-transform: capitalize;
+}
+
+.agenda-date-day {
+  font-family: 'Jost', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0.25rem 0 0.35rem;
+  color: var(--primary);
+}
+
+.agenda-date-time {
+  font-size: 0.78rem;
   color: var(--secondary);
+  white-space: nowrap;
+}
+
+.agenda-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.agenda-body .entry-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.45rem;
+  margin-bottom: 0.55rem;
+}
+
+.agenda-body .entry-header h2 {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+/*
+ * On narrow screens: collapse the date box into a full-width banner at
+ * the top of the card. Reads left-to-right: month, big day, time / year.
+ * The banner spanning the full width makes it unambiguous that this is
+ * the date header for the event below.
+ */
+@media (max-width: 480px) {
+  .agenda-card {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .agenda-date-box {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 0.7rem;
+    width: 100%;
+    min-width: 0;
+    padding: 0.5rem 0.9rem;
+  }
+  .agenda-date-month {
+    font-size: 0.95rem;
+  }
+  .agenda-date-day {
+    font-size: 1.6rem;
+    margin: 0;
+  }
+  .agenda-date-time {
+    margin-left: auto;
+  }
 }
 
 /* Event type badge */
 .event-badge {
-  font-size: 0.6em;
-  font-weight: 700;
+  font-size: 0.4em;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 2px 7px;
@@ -186,13 +288,13 @@ header { border-bottom: 1px solid var(--border); }
 }
 
 /* Badge colors – dark mode */
-.dark .event-badge.taller   { color: #3fb950; border-color: #3fb95055; }
+.dark .event-badge.taller   { color: #00d4d4; border-color: #00d4d455; }
 .dark .event-badge.tertulia { color: #bc8cff; border-color: #bc8cff55; }
 .dark .event-badge.barcamp  { color: #f0883e; border-color: #f0883e55; }
 .dark .event-badge.social   { color: #58a6ff; border-color: #58a6ff55; }
 
 /* Badge colors – light mode */
-.event-badge.taller   { color: #1a7f37; border-color: #1a7f3755; }
+.event-badge.taller   { color: #0a8e8e; border-color: #0a8e8e55; }
 .event-badge.tertulia { color: #7c3aed; border-color: #7c3aed55; }
 .event-badge.barcamp  { color: #c45000; border-color: #c4500055; }
 .event-badge.social   { color: #0969da; border-color: #0969da55; }
@@ -224,8 +326,8 @@ header { border-bottom: 1px solid var(--border); }
   border-bottom: 1px dotted var(--border);
 }
 
-.dark .agenda-speakers a:hover { color: #3fb950; border-color: #3fb950; }
-.agenda-speakers a:hover        { color: #1a7f37; border-color: #1a7f37; }
+.dark .agenda-speakers a:hover { color: #00d4d4; border-color: #00d4d4; }
+.agenda-speakers a:hover        { color: #0a8e8e; border-color: #0a8e8e; }
 
 /* Tags */
 .agenda-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
