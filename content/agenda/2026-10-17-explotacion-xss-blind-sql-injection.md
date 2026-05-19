@@ -9,5 +9,5 @@ speakers:
   - name: "Krishna"
 tags:
   - "Seguridad"
-description: ""
+description: "Taller de ciberseguridad ofensiva: explotación de vulnerabilidades XSS y Blind SQL Injection en entornos controlados."
 ---

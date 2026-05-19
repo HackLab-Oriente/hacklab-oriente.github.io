@@ -12,5 +12,5 @@ speakers:
     github: "cybux"
 tags:
   - "Eventos especiales"
-description: ""
+description: "Tertulia abierta sobre ciencia y tecnología con Jorge Zuluaga y Elkin Botero. Conversación, preguntas y diálogo en comunidad."
 ---

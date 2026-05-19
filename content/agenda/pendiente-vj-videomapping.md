@@ -10,5 +10,5 @@ speakers:
     github: "LuisGuillemoPalaciosGiraldo"
 tags:
   - "Arte & Multimedia"
-description: ""
+description: "Taller de VJ y videomapping: composición visual en tiempo real y proyección sobre superficies."
 ---

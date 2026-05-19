@@ -5,6 +5,39 @@
 {{- $month := index $monthNames $monthNum }}
 {{- $day := time.Format "2" .Date }}
 {{- $year := time.Format "2006" .Date }}
+
+{{/* Schema.org Event JSON-LD for rich results in Google */}}
+{{- $imgList := .Params.images | default site.Params.images }}
+{{- $imgURL := "" }}
+{{- with $imgList }}{{ $imgURL = (index . 0) | absURL }}{{ end }}
+{{- $performers := slice }}
+{{- range .Params.speakers }}
+  {{- $performers = $performers | append (dict "@type" "Person" "name" .name) }}
+{{- end }}
+{{- $location := dict
+  "@type" "Place"
+  "name" (.Params.location | default "Por confirmar")
+  "address" (dict
+    "@type" "PostalAddress"
+    "addressLocality" (.Params.city | default "")
+    "addressCountry" "CO")
+}}
+{{- $event := dict
+  "@context" "https://schema.org"
+  "@type" "Event"
+  "name" .Title
+  "description" (.Description | default .Summary)
+  "startDate" (.Date.Format "2006-01-02T15:04:05-07:00")
+  "eventStatus" "https://schema.org/EventScheduled"
+  "eventAttendanceMode" "https://schema.org/OfflineEventAttendanceMode"
+  "url" .Permalink
+  "image" $imgURL
+  "organizer" (dict "@type" "Organization" "name" site.Title "url" site.BaseURL)
+  "location" $location
+}}
+{{- if $performers }}{{ $event = merge $event (dict "performer" $performers) }}{{ end }}
+<script type="application/ld+json">{{ $event | jsonify (dict "indent" "  ") | safeJS }}</script>
+
 <article class="post-single agenda-single">
 
   <header class="post-header">
@@ -12,12 +45,13 @@
       <span class="agenda-single-title-text">{{ .Title }}</span>
       {{- with .Params.eventType }} <span class="event-badge {{ . }}">{{ . }}</span>{{ end -}}
     </h1>
-    {{- with .Description }}
-    <p class="post-description">{{ . }}</p>
-    {{- end }}
   </header>
 
   <div class="event-info event-info--with-date">
+    {{- with .Description }}
+    <p class="event-info-description">{{ . }}</p>
+    {{- end }}
+    <div class="event-info-body">
     <div class="agenda-date-box event-info-date-box" aria-hidden="true">
       <span class="agenda-date-month">{{ $month }}</span>
       <span class="agenda-date-day">{{ $day }}</span>
@@ -65,6 +99,7 @@
       {{- end }}
 
     </dl>
+    </div>
   </div>
 
   {{- with .Content }}

@@ -10,5 +10,5 @@ speakers:
     github: "kev1n44"
 tags:
   - "Videojuegos"
-description: ""
+description: "Taller práctico sobre el uso de un framework de videojuegos: arquitectura, herramientas y construcción de un proyecto desde cero."
 ---

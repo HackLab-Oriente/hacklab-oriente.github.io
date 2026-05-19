@@ -12,5 +12,5 @@ speakers:
     github: "dapanas"
 tags:
   - "Inteligencia Artificial"
-description: ""
+description: "Taller sobre desarrollo agéntico y Spec Programming: cómo construir software con agentes de IA usando especificaciones como contrato."
 ---

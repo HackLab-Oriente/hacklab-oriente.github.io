@@ -3,6 +3,7 @@ title: "Quiénes Somos"
 date: 2026-05-10
 draft: false
 hidemeta: true
+description: "Hacklab Oriente es un colectivo del Oriente Antioqueño que explora desarrollo de software, infraestructura, ciberseguridad, IA y software libre como herramientas de autonomía digital."
 ---
 
 <!-- Contenido por definir colaborativamente -->
