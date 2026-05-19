@@ -34,10 +34,6 @@ menu:
       name: Quiénes Somos
       url: /quienes-somos/
       weight: 30
-    - identifier: contacto
-      name: Contáctenos
-      url: /contacto/
-      weight: 40
     - identifier: memorias
       name: Memorias
       url: /memorias/
