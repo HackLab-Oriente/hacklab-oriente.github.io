@@ -78,7 +78,7 @@ a:hover { color: #066; }
 
 /*
  * Prepends "# " to the site name so it reads like a root shell prompt.
- * The green color is intentional: it's the classic terminal green.
+ * The cyan accent color is intentional and matches the current brand styling.
  */
 .logo a::before {
   content: '# ';
@@ -173,8 +173,9 @@ header { border-bottom: 1px solid var(--border); }
 
 /*
  * Two-column layout: a calendar-style date box on the left, the event
- * details on the right. The body's <header> uses the global
- * `header { border-bottom }` rule to draw the separator below the title.
+ * details on the right. The title separator is drawn by the header border
+ * styling, including the agenda-specific `.agenda-body .entry-header`
+ * rule defined later in this stylesheet.
  */
 .agenda-card {
   display: flex;

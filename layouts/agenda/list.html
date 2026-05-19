@@ -14,9 +14,9 @@
 {{- $today := now.Format "2006-01-02" | time }}
 {{- $pages = where $pages "Date" "ge" $today }}
 {{- $paginator := .Paginate $pages }}
+{{- $monthNames := slice "" "Enero" "Febrero" "Marzo" "Abril" "Mayo" "Junio" "Julio" "Agosto" "Septiembre" "Octubre" "Noviembre" "Diciembre" }}
 
 {{- range $paginator.Pages }}
-{{- $monthNames := slice "" "Enero" "Febrero" "Marzo" "Abril" "Mayo" "Junio" "Julio" "Agosto" "Septiembre" "Octubre" "Noviembre" "Diciembre" }}
 {{- $monthNum := int (time.Format "1" .Date) }}
 {{- $month := index $monthNames $monthNum }}
 {{- $day := time.Format "02" .Date }}
@@ -27,7 +27,7 @@
     <div class="agenda-date-box">
       <span class="agenda-date-month">{{ $month }}</span>
       <span class="agenda-date-day">{{ $day }}</span>
-      <span class="agenda-date-time">{{ if eq $hhmm "00:00" }}—{{ else }}{{ $hhmm }}{{ end }} / {{ $year }}</span>
+      <span class="agenda-date-time">{{ if eq $hhmm "00:00" }}Por definir{{ else }}{{ $hhmm }}{{ end }} / {{ $year }}</span>
     </div>
     <div class="agenda-body">
       <header class="entry-header">
