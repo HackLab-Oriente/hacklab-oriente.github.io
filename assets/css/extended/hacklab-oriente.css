@@ -180,7 +180,7 @@ header { border-bottom: 1px solid var(--border); }
 .agenda-card {
   display: flex;
   gap: 1.25rem;
-  align-items: stretch;
+  align-items: flex-start;
 }
 
 .agenda-date-box {
@@ -244,22 +244,35 @@ header { border-bottom: 1px solid var(--border); }
   line-height: 1.2;
 }
 
-/* Stack the date box above the body on narrow screens */
+/*
+ * On narrow screens: collapse the date box into a full-width banner at
+ * the top of the card. Reads left-to-right: month, big day, time / year.
+ * The banner spanning the full width makes it unambiguous that this is
+ * the date header for the event below.
+ */
 @media (max-width: 480px) {
   .agenda-card {
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.85rem;
   }
   .agenda-date-box {
     flex-direction: row;
+    align-items: baseline;
     justify-content: flex-start;
-    gap: 0.6rem;
+    gap: 0.7rem;
+    width: 100%;
     min-width: 0;
-    padding: 0.5rem 0.8rem;
+    padding: 0.5rem 0.9rem;
+  }
+  .agenda-date-month {
+    font-size: 0.95rem;
   }
   .agenda-date-day {
     font-size: 1.6rem;
     margin: 0;
+  }
+  .agenda-date-time {
+    margin-left: auto;
   }
 }
 
