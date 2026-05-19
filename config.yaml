@@ -8,7 +8,7 @@ pagination:
 
 params:
   env: production
-  defaultTheme: dark
+  defaultTheme: auto
   disableThemeToggle: false
   ShowShareButtons: false
   ShowReadingTime: false
