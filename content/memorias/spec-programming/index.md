@@ -13,13 +13,13 @@ Daniel Pérez
 
 ## Presentación
 
-[Descargar presentación](presentacion.pdf)
+[Descargar presentación](files/presentacion.pdf)
 
 ## Material del taller
 
-- [Glosario de Spec-Driven Development](glosario.pdf)
-- [Comandos y prompts del proyecto café](comandos-y-prompts.pdf)
-- [Preguntas y respuestas](preguntas-y-respuestas.pdf)
+- [Glosario de Spec-Driven Development](files/glosario.pdf)
+- [Comandos y prompts del proyecto café](files/comandos-y-prompts.pdf)
+- [Preguntas y respuestas](files/preguntas-y-respuestas.pdf)
 
 ## Enlaces útiles
 
