@@ -1,5 +1,5 @@
 ---
-title: "Live coding y Strudel"
+title: "Live Coding con Strudel: música programada en tiempo real"
 date: '2026-08-15T14:00:00-05:00'
 draft: false
 location: "Gógoblu"
@@ -15,7 +15,7 @@ description: "Taller práctico de live coding musical con Strudel a cargo de Ale
 
 Escribes código y, en vez de una interfaz, aparece un beat. Lo escuchas, lo modificas, lo vuelves a ejecutar — en vivo, frente a todos.
 
-Taller práctico de live coding musical con **Strudel**, una herramienta gratuita que corre en el navegador y convierte patrones de texto en ritmos y melodías. A cargo de Alex Bit (Unloquer), construiremos secuencias, ritmos por capas y pequeñas canciones en tres estilos —techno, drum and bass y una aproximación a la champeta— hasta cerrar con una demo de StrudelLM, un copiloto con IA para acelerar la exploración creativa.
+Taller práctico de live coding musical con **Strudel**, una herramienta gratuita que corre en el navegador y convierte patrones de texto en ritmos y melodías. A cargo de Alex Bit, quien participa en representación de Unloquer —un laboratorio ciudadano y colectivo de experimentación con tecnología, arte, electrónica, ciencia abierta y cultura libre—, construiremos secuencias, ritmos por capas y pequeñas canciones en tres estilos —techno, drum and bass y una aproximación a la champeta— hasta cerrar con una demo de StrudelLM, un copiloto con IA para acelerar la exploración creativa.
 
 Dirigido a cualquiera con ganas de experimentar: no necesitas saber programar ni de teoría musical.
 
@@ -35,5 +35,8 @@ Duración aproximada: 4 horas
 
 ## Requisitos
 
-- Trae tu portátil y audífonos
+- Trae tu portátil con cargador y audífonos
+- Navegador actualizado, preferiblemente Chrome o Firefox en su última versión
+- Acceso a internet
+- Opcional: mouse
 - No necesitas experiencia previa en programación ni en teoría musical
