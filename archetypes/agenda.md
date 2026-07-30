@@ -4,7 +4,7 @@ date: ''        # fecha del evento (YYYY-MM-DD o YYYY-MM-DDTHH:MM:SS-05:00) — 
 draft: true
 location: ''
 city: ''
-eventType: 'taller'
+eventType: 'taller'   # opciones con estilo definido: taller, tertulia, barcamp, social, charla
 speakers: []
   # - name: 'Nombre Apellido'
   #   github: 'handle'   # optional

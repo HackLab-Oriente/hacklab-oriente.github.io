@@ -360,12 +360,14 @@ header { border-bottom: 1px solid var(--border); }
 [data-theme="dark"] .event-badge.tertulia { color: #bc8cff; border-color: #bc8cff55; }
 [data-theme="dark"] .event-badge.barcamp  { color: #f0883e; border-color: #f0883e55; }
 [data-theme="dark"] .event-badge.social   { color: #58a6ff; border-color: #58a6ff55; }
+[data-theme="dark"] .event-badge.charla   { color: #3fb950; border-color: #3fb95055; }
 
 /* Badge colors – light mode */
 .event-badge.taller   { color: #0a8e8e; border-color: #0a8e8e55; }
 .event-badge.tertulia { color: #7c3aed; border-color: #7c3aed55; }
 .event-badge.barcamp  { color: #c45000; border-color: #c4500055; }
 .event-badge.social   { color: #0969da; border-color: #0969da55; }
+.event-badge.charla   { color: #1a7f37; border-color: #1a7f3755; }
 
 /* Two stacked rows: location+city, then speakers+tags */
 .agenda-meta {
