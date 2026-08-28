@@ -9,22 +9,25 @@ speakers: []
 tags:
   - "Desarrollo"
   - "Hardware & Making"
-description: "Cuarta y última sesión del ciclo Desktop Buddy: ensamblaje final, pulido y demo del compañero de escritorio construido en comunidad."
+description: "Cuarta y última sesión del ciclo Desktop Buddy: ensamblaje dentro de la carcasa, pulido fino y demo de lo que construimos entre todos."
 ---
 
-De protoboard a compañero de escritorio terminado. Última sesión del ciclo Desktop Buddy: ensamblaje, pulido final y demo de lo que construimos entre todos — incluyendo la conversación por voz.
+De protoboard a compañero de escritorio terminado. La electrónica entra en la carcasa impresa, se sueldan las conexiones y el buddy queda de pie sobre la mesa, andando con su propio cargador.
 
-Dirigido a quienes vienen desde la sesión 1. Trae tu buddy tal como quedó en la sesión 3.
+Buena parte de la tarde es pulido, y hay una parte que suena a detalle y no lo es: **la acústica cambia cuando el parlante y el micrófono comparten caja.** Todo lo que se midió hasta ahora se midió al aire. Le reservamos una hora entera a ajustar el sonido con la carcasa cerrada.
+
+La última hora está reservada para demo, retrospectiva y para votar qué sigue.
 
 ## Agenda
 
 Duración aproximada: 4 horas
 
-- Paso de protoboard a protoboard soldada y ensamblaje dentro del case impreso
-- Voz: ajuste fino del volumen y los tiempos de la cara de "pensando" ya dentro del case cerrado — la acústica cambia cuando el speaker y el micrófono comparten carcasa
-- Pulido: experiencia de arranque, comportamientos en reposo y ajuste fino del pack por defecto
-- Cierre: demo de cada buddy, retro del ciclo y votación de qué sigue (¿palabra de activación? ¿hub? ¿actuadores?)
+- Paso a placa soldada y montaje dentro de la carcasa impresa.
+- **Ajuste acústico con la caja cerrada** — volumen, filtro de graves y los tiempos de la cara de «pensando», ya en su carcasa definitiva.
+- Pulido: experiencia de arranque, comportamientos en reposo y ajuste fino del pack por defecto.
+- **Cierre**: demo de cada buddy, retrospectiva del ciclo y votación de qué sigue — ¿palabra de activación? ¿un hub? ¿actuadores? ¿tarjeta SD?
 
 ## Requisitos
 
-- Trae tu portátil con cargador, tu hardware de las sesiones anteriores y soldador propio si tienes (habrá algunos disponibles para compartir)
+- Trae tu portátil con cargador.
+- Si tienes cautín, tráelo; habrá algunos para compartir.

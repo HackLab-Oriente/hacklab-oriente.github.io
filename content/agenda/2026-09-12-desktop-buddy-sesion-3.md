@@ -9,24 +9,27 @@ speakers: []
 tags:
   - "Desarrollo"
   - "Hardware & Making"
-description: "Tercera sesión del ciclo Desktop Buddy: reflejos programables, personalidad, una mente conversacional impulsada por IA y los primeros pasos hablando por voz."
+description: "Tercera sesión del ciclo Desktop Buddy: personalidad y ciclo de voz completo. Le hablas y te contesta hablando — y decidimos quién es."
 ---
 
-Ya tiene cuerpo y reacciones. Tercera sesión del ciclo Desktop Buddy: le damos alma. Se vuelve hackeable de verdad, estrena personalidad y empieza a escuchar de verdad, no solo comunicación por texto.
+Ya tiene cuerpo y ya se configura. Esta tarde decide **quién es**.
 
-Dirigido a quienes vienen siguiendo las sesiones anteriores. También hay trabajo abierto para quien no programa: crear la personalidad del buddy es tan importante como el firmware.
+El firmware aprende a leer «packs» de personalidad: a partir de aquí cambiar cómo es el buddy no recompila nada, se edita un archivo y se recarga en caliente. Y el ciclo de voz se cierra entero: mantienes el pad, hablas, sueltas, y el buddy transcribe, piensa y te responde por el parlante.
+
+Es la sesión con **más trabajo sin código de todo el ciclo**. Escribir cómo habla la criatura es tan determinante como el firmware, y esa tarde se decide de dónde salen sus frases: un banco escrito a mano, recombinación automática con cadenas de Markov, o un modelo entrenado. No hay que elegir una sola — se puede mezclar, y cada expresión decide.
 
 ## Agenda
 
 Duración aproximada: 4 horas
 
-- Firmware: los reflejos en Berry se recargan en caliente desde la interfaz web; carga del formato de "packs" (pack.json + reflejos + caras + sonidos)
-- Brain: adaptador dispositivo-nube — chatea con tu buddy desde la consola de texto de la web UI; las respuestas del LLM disparan emoción → animación + chirrido
-- Voz: se conecta la prueba de streaming de la sesión 2 al flujo completo — mantener presionado para hablar, soltar para que el buddy entienda, piense y responda por voz a través del speaker
-- Contenido: en grupos pequeños se crea el pack de personalidad `default` (prompt, animaciones, sonidos y las caras de "pensando"/"escuchando" para el flujo de voz) — trabajo divertido y sin C++ para todo el que no esté metido en firmware
-- Case: queda encolada la impresión final
+- **Firmware** — el cargador de packs. Cambiar la personalidad deja de necesitar compilador.
+- **Voz** — el ciclo completo: mantener, hablar, soltar, y que conteste por el parlante. Mientras piensa, la cara lo cuenta.
+- **Personalidad** — el pack por defecto terminado: cómo habla, qué frases tiene y de dónde salen. Hay una herramienta en línea para pegar tu propio corpus y ver cuánta variedad da antes de escribir nada.
+- **Web** — administrar packs desde el navegador: elegir el activo, subirlo, editarlo.
+- **Electrónica** — paso de protoboard a placa soldada.
+- **Diseño 3D** — impresión final y encolado.
 
 ## Requisitos
 
-- Trae tu portátil con cargador y el hardware de las sesiones anteriores
-- No necesitas saber programar para participar en la creación de personalidades
+- Trae tu portátil con cargador.
+- **No necesitas saber programar para participar en la personalidad**, que esta sesión es en buena parte de eso.
