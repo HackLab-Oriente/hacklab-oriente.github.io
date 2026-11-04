@@ -1,5 +1,30 @@
 {{- define "main" }}
+{{- $barcamp := site.GetPage "/agenda/2026-11-07-barcamp" -}}
 <section class="home-hero">
+    {{- if $barcamp -}}
+    {{- $ends := $barcamp.Params.eventEnd | time -}}
+    {{- if gt $ends now -}}
+    {{- $monthNames := slice "" "Enero" "Febrero" "Marzo" "Abril" "Mayo" "Junio" "Julio" "Agosto" "Septiembre" "Octubre" "Noviembre" "Diciembre" -}}
+    {{- $month := index $monthNames (int (time.Format "1" $barcamp.Date)) -}}
+    {{- $day := time.Format "2" $barcamp.Date -}}
+    {{- $dayBox := time.Format "02" $barcamp.Date -}}
+    {{- $year := time.Format "2006" $barcamp.Date -}}
+    {{- $hhmm := time.Format "15:04" $barcamp.Date -}}
+    <a class="barcamp-invite" href="{{ $barcamp.RelPermalink }}">
+        <span class="barcamp-invite-main">
+            <span class="barcamp-invite-mark">Barcamp</span>
+            <span class="barcamp-invite-title">Esta es <em>tu tarima.</em></span>
+            <span class="barcamp-invite-text">Te esperamos el sábado {{ $day }} de {{ $month | lower }}, de 1:00&nbsp;p.&nbsp;m. a 7:10&nbsp;p.&nbsp;m., en el {{ $barcamp.Params.location }}.</span>
+            <span class="barcamp-invite-go">Ver la agenda</span>
+        </span>
+        <span class="barcamp-invite-when" aria-hidden="true">
+            <span class="barcamp-invite-month">{{ $month }}</span>
+            <span class="barcamp-invite-day">{{ $dayBox }}</span>
+            <span class="barcamp-invite-time">{{ $hhmm }} / {{ $year }}</span>
+        </span>
+    </a>
+    {{- end -}}
+    {{- end -}}
     <picture class="home-hero-logo">
         <img class="brand-logo brand-logo--light" fetchpriority="high" src="{{ "img/logo-light-background.svg" | absURL }}" alt="{{ site.Title }}">
         <img class="brand-logo brand-logo--dark" fetchpriority="high" src="{{ "img/logo-dark-background.svg"  | absURL }}" alt="{{ site.Title }}">
