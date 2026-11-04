@@ -36,6 +36,7 @@
   "location" $location
 }}
 {{- if $performers }}{{ $event = merge $event (dict "performer" $performers) }}{{ end }}
+{{- with .Params.eventEnd }}{{ $event = merge $event (dict "endDate" .) }}{{ end }}
 <script type="application/ld+json">{{ $event | jsonify (dict "indent" "  ") | safeJS }}</script>
 
 <article class="post-single agenda-single">
@@ -75,6 +76,7 @@
       <dd>{{ . }}</dd>
       {{- end }}
 
+      {{- if not .Params.schedule }}
       {{- with .Params.speakers }}
       <dt><span class="dt-emoji">👤 </span>{{ if gt (len .) 1 }}Ponentes{{ else }}Ponente{{ end }}</dt>
       <dd>
@@ -89,6 +91,7 @@
         {{- end -}}
         {{- end }}
       </dd>
+      {{- end }}
       {{- end }}
 
       {{- with .Params.tags }}
@@ -106,6 +109,52 @@
   <div class="post-content md-content">
     {{- partial "anchored_headings.html" . -}}
   </div>
+  {{- end }}
+
+  {{- with .Params.schedule }}
+  <section class="runsheet-wrap" aria-labelledby="runsheet-title">
+    <h2 id="runsheet-title">Agenda</h2>
+    <ol class="runsheet">
+      {{- range $i, $slot := . }}
+      {{- if $slot.pause }}
+      <li class="slot slot--pause">
+        <p class="slot-time"><time datetime="{{ $slot.startAt }}">{{ $slot.when }}</time></p>
+        <div class="slot-body">
+          <h3 class="slot-title">{{ $slot.title }}</h3>
+          {{- with $slot.note }}<p class="slot-note">{{ . }}</p>{{ end }}
+        </div>
+      </li>
+      {{- else }}
+      <li class="slot">
+        <p class="slot-time"><time datetime="{{ $slot.startAt }}">{{ $slot.when }}</time></p>
+        {{- if $slot.photo }}
+        <img class="slot-photo" src="{{ $slot.photo | absURL }}" alt="" {{- if gt $i 0 }} loading="lazy"{{- end }} decoding="async">
+        {{- else }}
+        {{- $initials := delimit (apply (first 2 (split $slot.name " ")) "substr" "." 0 1) "" }}
+        <div class="slot-photo slot-photo--empty" aria-hidden="true">{{ $initials }}</div>
+        {{- end }}
+        <div class="slot-body">
+          <p class="slot-name">{{ $slot.name }}
+            {{- if $slot.remote }} <span class="slot-flag slot-flag--remote">Remoto</span>{{ end -}}
+            {{- if $slot.closing }} <span class="slot-flag">Cierre</span>{{ end -}}
+          </p>
+          <h3 class="slot-title">{{ $slot.title }}</h3>
+          {{- with $slot.meta }}<p class="slot-meta">{{ . }}</p>{{ end }}
+          {{- with $slot.summary }}<div class="slot-summary">{{ . | markdownify }}</div>{{ end }}
+          {{- with $slot.bio }}<div class="slot-bio">{{ . | markdownify }}</div>{{ end }}
+          {{- with $slot.links }}
+          <ul class="slot-links">
+            {{- range . }}
+            <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .label }}</a></li>
+            {{- end }}
+          </ul>
+          {{- end }}
+        </div>
+      </li>
+      {{- end }}
+      {{- end }}
+    </ol>
+  </section>
   {{- end }}
 
   <footer class="post-footer">

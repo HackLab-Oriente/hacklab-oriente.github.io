@@ -503,3 +503,204 @@ header { border-bottom: 1px solid var(--border); }
   }
   .home-hero-logo { max-width: 320px; }
 }
+
+/* ── Barcamp run of show ────────────────────────────────────────────────── */
+
+/*
+ * One orange time column, then the person and the talk. The time is the
+ * thing you scan; photos and copy stay in the existing type and palette.
+ */
+.runsheet-wrap {
+  margin: 0.5rem 0 2rem;
+}
+
+.runsheet-wrap h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+.runsheet {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slot {
+  display: grid;
+  grid-template-columns: 8.25rem 4.75rem minmax(0, 1fr);
+  column-gap: 1rem;
+  align-items: start;
+  padding: 1.15rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.slot-time {
+  margin: 0;
+  padding-top: 0.15rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.25;
+  color: #c45000;
+}
+
+[data-theme="dark"] .slot-time { color: #f0883e; }
+
+.slot-time time { white-space: nowrap; }
+
+.slot-photo {
+  width: 4.75rem;
+  height: 4.75rem;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--tertiary);
+}
+
+.slot-photo--empty {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--secondary);
+}
+
+.slot-name {
+  margin: 0;
+  font-family: 'Jost', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.slot-flag {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--secondary);
+  vertical-align: 0.12em;
+}
+
+.slot-flag--remote {
+  color: #c45000;
+  border-color: #c4500055;
+}
+
+[data-theme="dark"] .slot-flag--remote {
+  color: #f0883e;
+  border-color: #f0883e55;
+}
+
+.runsheet .slot-title {
+  margin: 0.2rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.slot-meta {
+  margin: 0.3rem 0 0;
+  font-size: 0.86rem;
+  color: var(--secondary);
+}
+
+.slot-summary,
+.slot-bio {
+  max-width: 68ch;
+}
+
+.slot-summary {
+  margin-top: 0.55rem;
+  color: var(--content);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.slot-summary p,
+.slot-bio p {
+  margin: 0 0 0.55rem;
+}
+
+.slot-summary p:last-child,
+.slot-bio p:last-child {
+  margin-bottom: 0;
+}
+
+.slot-bio {
+  margin-top: 0.55rem;
+  color: var(--secondary);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.slot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.9rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.92rem;
+}
+
+.slot-links a {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.slot--pause {
+  grid-template-columns: 8.25rem 4.75rem minmax(0, 1fr);
+}
+
+.slot--pause .slot-body {
+  grid-column: 3;
+}
+
+.slot--pause .slot-time {
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+.slot--pause .slot-title,
+.slot-note {
+  font-style: italic;
+  color: var(--secondary);
+}
+
+.slot-note {
+  margin: 0.15rem 0 0;
+}
+
+@media (max-width: 640px) {
+  .slot,
+  .slot--pause {
+    grid-template-columns: 3.75rem minmax(0, 1fr);
+    column-gap: 0.75rem;
+  }
+
+  .slot-time {
+    grid-column: 1 / -1;
+    padding-top: 0;
+    margin-bottom: 0.15rem;
+  }
+
+  .slot--pause .slot-body {
+    grid-column: 1 / -1;
+  }
+
+  .slot-photo {
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+
+  .slot-name { font-size: 1.08rem; }
+}
