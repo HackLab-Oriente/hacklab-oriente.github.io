@@ -425,6 +425,143 @@ header { border-bottom: 1px solid var(--border); }
   padding: 2rem 1rem 3rem;
 }
 
+/*
+ * A slice of the Barcamp invitation (hacklaboriente.org/barcamp):
+ * dark panel, Bar<amp mark, and the line "Esta es tu tarima."
+ * It stays dark in both themes so it reads as that event, not as
+ * another section card.
+ */
+a.barcamp-invite,
+[data-theme="dark"] a.barcamp-invite {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.25rem 2rem;
+  align-self: stretch;
+  width: 100%;
+  max-width: 56rem;
+  margin: 0 auto 2.5rem;
+  padding: 1.35rem 1.5rem 1.45rem;
+  text-align: left;
+  text-decoration: none;
+  color: #fafafa;
+  background: #0a1214;
+  border: 1px solid #1e3a3f;
+  border-radius: 14px;
+}
+
+a.barcamp-invite:hover,
+[data-theme="dark"] a.barcamp-invite:hover {
+  border-color: #00d4d4;
+}
+
+a.barcamp-invite:focus-visible,
+[data-theme="dark"] a.barcamp-invite:focus-visible {
+  outline: 3px solid #00d4d4;
+  outline-offset: 3px;
+}
+
+.barcamp-invite-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.barcamp-invite-mark {
+  font-family: 'Jost', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+
+.barcamp-invite-title {
+  margin-top: 0.55rem;
+  font-family: 'Jost', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  color: #fafafa;
+}
+
+.barcamp-invite-title em {
+  font-style: normal;
+  color: #00d4d4;
+}
+
+.barcamp-invite-text {
+  margin-top: 0.7rem;
+  max-width: 38rem;
+  color: #d6e4e5;
+  font-size: 1.02rem;
+  line-height: 1.45;
+}
+
+.barcamp-invite-go {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.72rem 1.25rem;
+  border-radius: 999px;
+  background: #00d4d4;
+  color: #00292b;
+  font-family: 'Jost', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+a.barcamp-invite:hover .barcamp-invite-go {
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.barcamp-invite:hover .barcamp-invite-go { transform: none; }
+}
+
+/* Same calendar chip as the agenda cards: month, day, time / year. */
+.barcamp-invite-when {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  align-self: center;
+  min-width: 8.25rem;
+  padding: 0.7rem 1rem 0.75rem;
+  text-align: center;
+  line-height: 1;
+  background: #0f1d20;
+  border: 1px solid #1e3a3f;
+  border-radius: 6px;
+}
+
+.barcamp-invite-month {
+  font-family: 'Jost', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fafafa;
+  text-transform: capitalize;
+}
+
+.barcamp-invite-day {
+  margin: 0.25rem 0 0.35rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #fafafa;
+}
+
+.barcamp-invite-time {
+  font-size: 0.78rem;
+  color: #9db2b5;
+  white-space: nowrap;
+}
+
 .home-hero-logo {
   display: block;
   width: 100%;
@@ -502,6 +639,42 @@ header { border-bottom: 1px solid var(--border); }
     grid-template-columns: 1fr;
   }
   .home-hero-logo { max-width: 320px; }
+
+  a.barcamp-invite,
+  [data-theme="dark"] a.barcamp-invite {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.55rem;
+    padding: 1.15rem 1.1rem 1.25rem;
+  }
+
+  .barcamp-invite-main { display: contents; }
+
+  .barcamp-invite-title { order: 1; }
+  .barcamp-invite-when { order: 2; }
+  .barcamp-invite-text { order: 3; }
+  .barcamp-invite-go { order: 4; }
+
+  .barcamp-invite-when {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 0.7rem;
+    width: 100%;
+    min-width: 0;
+    padding: 0.5rem 0.9rem;
+    text-align: left;
+  }
+
+  .barcamp-invite-month { font-size: 0.95rem; }
+
+  .barcamp-invite-day {
+    margin: 0;
+    font-size: 1.6rem;
+  }
+
+  .barcamp-invite-time { margin-left: auto; }
 }
 
 /* ── Barcamp run of show ────────────────────────────────────────────────── */
